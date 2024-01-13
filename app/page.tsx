@@ -1,9 +1,8 @@
 import Preview from '@/components/Home/Preview';
 import Pricing from '@/components/Home/Pricing';
 import MaxWidthWrapper from '@/components/MaxWidthWrapper';
-import { ContainerScroll } from '@/components/animation/container-scroll';
 import Footer from '@/components/base/Footer';
-import { Button, buttonVariants } from '@/components/ui/button';
+import { buttonVariants } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -75,14 +74,16 @@ export default function Home() {
           </div>
         </div>
 
-        <ol className='my-8 space-y-4 pt-8 md:flex md:space-x-12 md:space-y-0'>
-          <li className='md:flex-1'>
-            <div className='flex flex-col space-y-2 border-l-4 border-zinc-300 py-2 pl-4 md:border-l-0 md:border-t-2 md:pb-0 md:pl-0 md:pt-4'>
-              <span className='text-sm font-medium text-blue-600'>Step 1</span>
-              <span className='text-xl font-semibold'>
+        <ol className='my-8 pt-8 max-w-6xl w-full'>
+          <li className='flex items-center justify-between w-full space-y-20'>
+            <div className='flex flex-col space-y-2 py-2 pl-4 md:pb-0 md:pl-0 md:pt-4 text-left'>
+              <span className='text-2xl font-medium text-blue-600 uppercase'>
+                Step 1
+              </span>
+              <span className='text-4xl font-semibold'>
                 Sign up for an account
               </span>
-              <span className='mt-2 text-zinc-700'>
+              <span className='mt-2 text-zinc-700 text-xl'>
                 Either starting out with a free plan or choose our{' '}
                 <Link
                   href='/pricing'
@@ -93,47 +94,79 @@ export default function Home() {
                 .
               </span>
             </div>
-          </li>
-          <li className='md:flex-1'>
-            <div className='flex flex-col space-y-2 border-l-4 border-zinc-300 py-2 pl-4 md:border-l-0 md:border-t-2 md:pb-0 md:pl-0 md:pt-4'>
-              <span className='text-sm font-medium text-blue-600'>Step 2</span>
-              <span className='text-xl font-semibold'>
-                Upload your PDF file
-              </span>
-              <span className='mt-2 text-zinc-700'>
-                We&apos;ll process your file and make it ready for you to chat
-                with.
-              </span>
-            </div>
-          </li>
-          <li className='md:flex-1'>
-            <div className='flex flex-col space-y-2 border-l-4 border-zinc-300 py-2 pl-4 md:border-l-0 md:border-t-2 md:pb-0 md:pl-0 md:pt-4'>
-              <span className='text-sm font-medium text-blue-600'>Step 3</span>
-              <span className='text-xl font-semibold'>
-                Start asking questions
-              </span>
-              <span className='mt-2 text-zinc-700'>
-                It&apos;s that simple. Try out Quill today - it really takes
-                less than a minute.
-              </span>
-            </div>
-          </li>
-        </ol>
-
-        <div className='mx-auto max-w-6xl px-6 lg:px-8'>
-          <div className='mt-16 flow-root sm:mt-24'>
             <div className='-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4'>
               <Image
                 src='/file-upload-preview.jpg'
                 alt='uploading preview'
-                width={1419}
-                height={732}
+                width={500}
+                height={200}
                 quality={100}
-                className='rounded-md bg-white p-2 sm:p-8 md:p-20 shadow-2xl ring-1 ring-gray-900/10'
+                className='rounded-md bg-white shadow-2xl ring-1 ring-gray-900/10'
               />
             </div>
-          </div>
-        </div>
+          </li>
+
+          <li className='flex items-center justify-between w-full flex-row-reverse space-y-20'>
+            <div className='flex flex-col space-y-2 py-2 pl-4 md:pb-0 md:pl-0 md:pt-4 text-right'>
+              <span className='text-2xl font-medium text-blue-600 uppercase'>
+                Step 2
+              </span>
+              <span className='text-4xl font-semibold'>
+                Upload your PDF file
+              </span>
+              <span className='mt-2 text-zinc-700 text-xl'>
+                We&apos;ll process your file and make it ready for you to chat
+                with.
+              </span>
+            </div>
+            <div className='-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4'>
+              <Image
+                src='/file-upload-preview.jpg'
+                alt='uploading preview'
+                width={500}
+                height={200}
+                quality={100}
+                className='rounded-md bg-white shadow-2xl ring-1 ring-gray-900/10'
+              />
+            </div>
+          </li>
+
+          <li className='flex items-center justify-between w-full space-y-20'>
+            <div className='flex flex-col space-y-2 py-2 pl-4 md:pb-0 md:pl-0 md:pt-4 text-left'>
+              <span className='text-2xl font-medium text-blue-600 uppercase'>
+                Step 3
+              </span>
+              <span className='text-4xl font-semibold'>
+                Start asking questions
+              </span>
+              <span className='mt-2 text-zinc-700 text-xl'>
+                It&apos;s that simple. Try out Quill today - it really takes
+                less than a minute.
+              </span>
+            </div>
+            <div className='-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4'>
+              <Image
+                src='/dashboard-preview.jpg'
+                alt='uploading preview'
+                width={500}
+                height={200}
+                quality={100}
+                className='rounded-md bg-white shadow-2xl ring-1 ring-gray-900/10'
+              />
+            </div>
+          </li>
+        </ol>
+
+        <Link
+          className={buttonVariants({
+            size: 'lg',
+            className: 'bg-black mt-20',
+          })}
+          href='/dashboard'
+          target='_blank'
+        >
+          Get started <ArrowRight className='ml-2 h-5 w-5' />
+        </Link>
 
         <div className='my-40'>
           <Pricing />
