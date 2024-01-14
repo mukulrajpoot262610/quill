@@ -96,7 +96,7 @@ export default function Home() {
             </div>
             <div className='-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4'>
               <Image
-                src='/file-upload-preview.jpg'
+                src='/login-preview.png'
                 alt='uploading preview'
                 width={500}
                 height={200}

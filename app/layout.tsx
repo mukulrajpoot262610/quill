@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils';
 import 'cal-sans';
 import Navbar from '@/components/base/Navbar/Navbar';
 import Providers from '@/components/Providers';
+import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -20,6 +21,7 @@ export default function RootLayout({
       <Providers>
         <body className={cn('min-h-screen antialiased grainy font-primary')}>
           <Navbar />
+          <Toaster />
           {children}
         </body>
       </Providers>
